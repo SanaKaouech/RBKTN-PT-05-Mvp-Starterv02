@@ -1,40 +1,56 @@
-// DELETE THIS LINE
-const selectAll = () => {};
+//const uplode = require("../modules/multer")
+//const cloudinary = require("../modules/cloudinary") 
+//const cloudinary = require("../modules/cloudinary");
 
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// const db = require("../database-mysql");
-// const Item = require('../database-mongo/Item.model.js');
+
+const db = require("../database-mysql");
 
 // UNCOMMENT IF USING MYSQL WITH CALLBACKS
-// const selectAll = function (req, res) {
-//   db.query("SELECT * FROM items", (err, items, fields) => {
-//     if (err) {
-//       res.status(500).send(err);
-//     } else {
-//       res.status(200).send(items);
-//     }
-//   });
-// };
+// Récupérer la liste de tous les animaux (READ - GET)
+const selectAll = function (req, res) {
+  db.query("SELECT * FROM animal", (err, items, fields) => {
+   if (err) {
+    res.status(500).send(err);
+   } else {
+     res.status(200).send(items);
+    }
+  });
+ };
 
-// UNCOMMENT IF USING MONGOOSE WITH PROMISES
-// const selectAll = function (req, res) {
-//   Item.find({})
-//     .then((items) => {
-//       res.status(200).send(items);
-//     })
-//     .catch((error) => {
-//       res.status(500).send(error);
-//     });
-// };
+ const addAnimal = (req, res) => {
+   const query = "INSERT INTO  animal  set ?" 
+   console.log("body:", req.body )
+   db.query(query,req.body,(err,result)=>{
+     err ? res.status(500).send(err) : res.status(200).send(result)
+  })
+   };
 
-// UNCOMMENT IF USING MONGOOSE WITH PROMISES & ASYNC AWAIT
-// const selectAll = async function (req, res) {
-//   try {
-//     const items = await Item.find({});
-//     res.status(200).send(items);
-//   } catch (error) {
-//     res.status(200).send(error);
-//   }
-// };
 
-module.exports = { selectAll };
+  
+  
+
+   const updateAnimal = (req, res) => {
+    const query = `UPDATE animal set ? where idanimal = ${req.params.id}`
+    db.query(query,req.body,(err,result)=>{
+     err ? res.status(500).send(err) : res.status(200).send(result)
+   })
+   };
+   
+   const removeAnimal =  (req, res) => {
+    const query = "delete from animal where idanimal = ?"
+    db.query(query,req.params.id,(err,result)=>{
+     err ? res.status(500).send(err) : res.status(200).send(result)
+   })
+   };
+
+   // Récupérer un animal spécifique par son nom (READ - GET)
+
+   const getOneAnimal = (req, res) => {
+    const query = `SELECT * FROM animal where name = "${req.params.name}"`
+    db.query(query,(err,result)=>{
+     err ? res.status(500).send(err) : res.status(200).send(result)
+   })
+   };
+
+module.exports = { selectAll, addAnimal, updateAnimal, removeAnimal, getOneAnimal };
