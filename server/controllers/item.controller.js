@@ -47,7 +47,7 @@ const selectAll = function (req, res) {
    // Récupérer un animal spécifique par son nom (READ - GET)
 
    const getOneAnimal = (req, res) => {
-    const query = `SELECT * FROM animal where name = "${req.params.name}"`
+    const query = `SELECT * FROM animal where race = "${req.params.race}"`
     db.query(query,(err,result)=>{
      err ? res.status(500).send(err) : res.status(200).send(result)
    })
