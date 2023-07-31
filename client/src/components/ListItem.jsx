@@ -47,18 +47,19 @@ const remove = (id)=>{
 
     return (
 
-       <div className = "Container">
+       <div className = "list">
       <p> Name : {item.name} </p>
-      <p> race : {item.race} </p>
-      <p> age : {item.age} </p>
-      <p> price :  {item.price} DT</p>
-       <img src={item.image}  /> 
+      <p> Race : {item.race} </p>
+      <p> Age : {item.age} </p>
+      <p> Price :  {item.price} DT</p>
+       <img className="imghome" src={item.image}  /> 
 
+       <br /><br /><br />
+       
+      <button className="ButtonA"  onClick= {()=>{remove(item.idanimal)}}>Delete</button> 
+      <button className="ButtonA" onClick={()=>setShow(!show)}>Update</button>
+      <br /><br /><br />
     
-      <button className ='btn-delete' onClick= {()=>{remove(item.idanimal)}}>Delete</button>
-      <br />
-      <button className = 'btn-update' onClick={()=>setShow(!show)}>Update</button>
-
      {show &&
       <div>
         <input type = "file" onChange = {(e)=> {setImage(e.target.files[0]) }}/> 

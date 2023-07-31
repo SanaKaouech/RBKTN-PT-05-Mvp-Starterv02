@@ -1,3 +1,180 @@
 img {
     height: 150px;
 }
+
+li {
+    display : inline;
+    padding : 0 0 0 0px;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    margin: 0 20px;
+  }
+  
+
+  
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+  }
+  body {
+    background-color: palegoldenrod;
+  }
+
+  .logo {
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .App {
+    text-align: center;
+  }
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+
+  
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+* {
+    box-sizing: border-box;
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-container input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .Button {
+    border-radius: 70%;
+    background-color: #daf109; /* Green */
+    border: none;
+    color: rgb(198, 17, 17);
+    padding: 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 9px #999;
+  }
+
+  .ButtonA {
+    display: inline-block;
+    border-radius: 70%;
+    background-color: #daf109;
+    border: none;
+    color: rgb(198, 17, 17);
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 9px #999;
+    /* margin-left: 580px; Supprimer cette ligne */
+    margin: 5px; /* Ajouter une marge entre les boutons si nécessaire */
+}
+
+
+
+
+.list {
+    display: inline-block;
+    padding: 10px;
+    border-style: groove;
+    margin: .9vw 0;
+    width: 60%;
+    margin-left: 10%;
+  }
+
+
+
+  .Titre1 {
+    color: rgb(252, 8, 8);
+    font-size: 200%;
+    font-family: Georgia;
+  }
+  .searchA {
+    color: rgb(250, 11, 11);
+    font-weight: bold;
+  }
+  .buttonContainer {
+    border-radius: 70%;
+    background-color: #daf109; /* Green */
+    border: none;
+    color: rgb(198, 17, 17);
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 9px #999;
+
+  }
+  .imgpetslist {
+    width: 70%;
+    height: 60%;
+  }
+  .imghome {
+    width: 50%;
+    height: 40%;
+  }
+
+  p {
+ color: rgb(168, 8, 8);
+  }

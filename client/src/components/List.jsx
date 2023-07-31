@@ -2,10 +2,10 @@ import React from "react";
 import ListItem from "./ListItem.jsx";
 
 const List = (props) => (
-  <div>
+  <div className="Titre1">
     {console.log("props: ",props)}
-    <h4> List Component </h4>
-    There are {props.items.length} items.
+    <h4 className="Titre1">  Your Animal is HERE </h4>
+      There are {props.items.length} Animals.
     <br/>
     <br/>
     <br/>
@@ -13,6 +13,7 @@ const List = (props) => (
       <div key={index}>
         <ListItem item={item} setReload={props.setReload} reload={props.reload} />
       </div>
+      
     ))}
   </div>
 );
